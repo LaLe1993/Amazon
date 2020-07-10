@@ -8,7 +8,7 @@ class Details extends Component {
         super(props)
     
         this.state = {
-             movie:null
+             movies:null
         }
     }
     

@@ -109,28 +109,6 @@ mediaRouter.delete('/:id', async(req,res,next)=>{
         const err=new Error('PROBLEM WITH DELETE')
         next(err)
     }
-})
-mediaRouter.post('/media/catalogue',async(req,res)=>{
-    let moviesArray=await readDB(mediaJsonPath)
-    let title= req.query.title
-    let filteredArray=moviesArray.filter(movie=> movie.Title.toLowerCase().includes(title))
-    res.send(filteredArray)
-
-    const doc = new PDFDocument();
-    
-  doc.pipe(createWriteStream("new.pdf"));
-for(let i=0;i<filteredArray.length;i++){
-    doc
-    .font("public/fonts/PalatinoBold.ttf")
-    .fontSize(20)
-    .text(
-      "NAME" + i +': ' + JSON.stringify(filteredArray[i].Title).replace(/"/g, ""),
-      100,
-      i*50+100
-    );
-}
- 
-  doc.end();
 }) 
 
 
