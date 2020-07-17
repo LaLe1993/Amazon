@@ -14,7 +14,6 @@ const NavBar = () => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
         <Link className='nav-link' to='/'>Products</Link>
-        <Link className='nav-link' to='/addNew'>Add new</Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

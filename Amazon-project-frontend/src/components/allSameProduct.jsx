@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Comments from './Comments'
-import {Card,Button,Row, Col,Image,Container} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Row, Container} from 'react-bootstrap'
 import Product from './Product'
 
 
@@ -10,7 +8,7 @@ class Details extends Component {
         super(props)
     
         this.state = {
-             movies:null
+             products:null
         }
     }
     
@@ -18,19 +16,17 @@ class Details extends Component {
         console.log('mounted')
         let id=this.props.match.params.id
         console.log('id',id)
-        fetch('http://localhost:3002/media/'+ id)
+        fetch('http://localhost:3456/products/'+ id)
         .then((response)=>response.json())
-        .then((responseJson)=> this.setState({movies:responseJson}))
+        .then((responseJson)=> this.setState({products:responseJson[0]}))
     }
 
     render() {
-        console.log(this.state.movies)
         return (
         <Container>
             <Row>
-            {console.log('this movie',this.state.movies)}
-              {this.state.movies&&
-                    <Product movies={this.state.movies} />
+              {this.state.products&&
+                    <Product products={this.state.products} />
                 }
             </Row>
         </Container>

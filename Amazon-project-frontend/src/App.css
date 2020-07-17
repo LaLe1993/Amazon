@@ -2,6 +2,7 @@ body,
 nav {
   margin: 0;
   background-color: white;
+  width: 100vw;
 }
 
 h2,
@@ -106,4 +107,8 @@ label{
 
 .imageInDetails{
   width: 100%;
+}
+
+.form-label{
+  color: black;
 }

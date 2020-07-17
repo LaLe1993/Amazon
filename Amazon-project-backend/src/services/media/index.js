@@ -95,7 +95,7 @@ mediaRouter.put('/:id',async(req,res,next)=>{
         await writeDB(mediaJsonPath,filteredArray)
         res.send('Ok')
     } catch (error) {
-        const err=new Error('PROBLEM WITH PUT')
+        const err=new Error('PROBLEM WITH UPDATE')
         next(err)
     }
 })
